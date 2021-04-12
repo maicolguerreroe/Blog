@@ -9,8 +9,14 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $fillable =['name', 'slug'];
+
     //relacion uno a muchos
     public function posts(){
         return $this->hasMany(Post::class);
+    }
+    public function getRouteKeyName()
+    {
+        return "slug";
     }
 }

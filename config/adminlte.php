@@ -236,18 +236,18 @@ return [
         ],
         [
             'text'        => 'Dashboard',
-            'url'         => 'admin',
+            'route'       => 'admin.home',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
         ],
         ['header' => 'ADMINISTRADOR'],
         [
             'text' => 'Categorias',
-            'route'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'route'=> 'admin.categories.index',
+            'icon' => 'fab fa-fw fa-buffer',
         ],
         [
             'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'url'  => 'admin',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
