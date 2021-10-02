@@ -2,6 +2,9 @@
 @section('title', 'Blog')
 
 @section('content_header')
+    @can('admin.categories.create')
+        <a class="btn btn-secondary float-right" href="{{route('admin.categories.create')}}">Agregar categoria</a>
+    @endcan
     <h1>{{__('Lista de categorias')}}</h1>
 @stop
 
@@ -14,9 +17,6 @@
         </div>
     @endif
     <div class="card">
-        <div class="card-header">
-            <a class="btn btn-secondary" href="{{route('admin.categories.create')}}">Agregar categoria</a>
-        </div>
         <div class="card-body">
             <table class="table table-striped">
                 <thead>
@@ -33,16 +33,19 @@
                             <td>{{$category->id}}</td>
                             <td>{{$category->name}}</td>
                             <td width="10px">
-                                <a class="btn btn-sm btn-primary" href="{{route('admin.categories.edit', $category)}}">Editar</a>
+                                @can('admin.categories.edit')
+                                    <a class="btn btn-sm btn-primary" href="{{route('admin.categories.edit', $category)}}">Editar</a>
+                                @endcan
                             </td>
                             <td width="10px">
-                                <form method="POST" action="{{route('admin.categories.destroy', $category)}}">
-                                    @csrf
-                                    @method('delete')
+                                @can('admin.categories.destroy')
+                                    <form method="POST" action="{{route('admin.categories.destroy', $category)}}">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                    </form>
+                                @endcan
 
-                                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-
-                                </form>
                             </td>
                         </tr>
                     @endforeach

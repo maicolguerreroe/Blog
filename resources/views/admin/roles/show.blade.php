@@ -2,7 +2,7 @@
 @section('title', 'Blog')
 
 @section('content_header')
-    <h1>{{__('Mostrar detalle de categoria')}}</h1>
+    <h1>{{__('Mostrar rol')}}</h1>
 @stop
 
 @section('content')

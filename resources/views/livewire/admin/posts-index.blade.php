@@ -10,7 +10,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                <th>ID</th>
                         <th>Nombre</th>
                         <th colspan="2"></th>
                     </tr>

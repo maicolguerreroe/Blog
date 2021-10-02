@@ -2,11 +2,11 @@
 @section('title', 'Blog')
 
 @section('content_header')
-    <h1>{{__('Detalle de etiqueta')}}</h1>
+    <h1>{{__('Lista de usuarios')}}</h1>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    @livewire('admin.users-index')
 @stop
 
 @section('css')
